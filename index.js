@@ -35,6 +35,8 @@ const serviceAccount = {
   universe_domain: process.env.UNIVERSE_DOMAIN,
 };
 
+console.log(serviceAccount)
+
 initializeApp({
   credential: cert(serviceAccount),
 });
@@ -57,5 +59,5 @@ io.on("connection", (socket) => {
 });
 
 server.listen(process.env.PORT || 3000, () => {
-  console.log("listening on *:3000");
+  console.log(`listening on port ${process.env.PORT}`);
 });
